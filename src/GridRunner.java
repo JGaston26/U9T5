@@ -1,5 +1,6 @@
 public class GridRunner {
     public static void main(String[] args) {
-        new GridGame();
+        GridGame game = new GridGame();
+        game.printBoard();
     }
 }
