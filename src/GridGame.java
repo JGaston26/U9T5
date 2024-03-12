@@ -32,8 +32,7 @@ public class GridGame {
               board[r][c] = space;
           }
       }
-      Player player1 = new Player("P");
-      board[7][0] = new Space(player1.getSymbol());
+      board[7][0] = new Space(player.getSymbol());
       Treasure treasure1 = new Treasure("@",69);
       Treasure treasure2 = new Treasure("@",45);
       Treasure treasure3 = new Treasure("@",30);
@@ -45,6 +44,9 @@ public class GridGame {
       board[(int) (Math.random() * 8)][(int) (Math.random() * 8)] = treasure3;
       board[(int) (Math.random() * 8)][(int) (Math.random() * 8)] = treasure4;
       board[(int) (Math.random() * 8)][(int) (Math.random() * 8)] = treasure5;
+
+      Goal goal = new Goal("X");
+      board[0][7] = new Space(goal.getSymbol());
     }
 
     /* prints the 2D array board, showing the symbol for each Space, e.g.
@@ -68,7 +70,13 @@ public class GridGame {
 
     // plays the game;
     private void play() {
-
+        createPlayer();
+        while(board[0][7] != player){
+            printBoard();
+            System.out.print("Enter in a direction(W,A,S,D/up,left,down,right)");
+            String ask = scanner.nextLine();
+            if()
+        }
         // WRITE THIS METHOD
         // main game loop:
         // while the player has not yet reached the goal, print the board (complete can call helper method below)
